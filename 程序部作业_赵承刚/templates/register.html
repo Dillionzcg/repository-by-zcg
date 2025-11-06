@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}用户注册{% endblock %}
+
+{% block content %}
+<h1>用户注册</h1>
+<form method="post">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="id_username">用户名</label>
+        {{ form.username }}
+        {% if form.username.errors %}
+        <div class="error">{{ form.username.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        <label for="id_email">邮箱</label>
+        {{ form.email }}
+        {% if form.email.errors %}
+        <div class="error">{{ form.email.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        <label for="id_password1">密码</label>
+        {{ form.password1 }}
+        {% if form.password1.errors %}
+        <div class="error">{{ form.password1.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        <label for="id_password2">确认密码</label>
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+        <div class="error">{{ form.password2.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <button type="submit" class="btn">注册</button>
+    
+    <div class="links">
+        <p>已有账户？<a href="/login/">立即登录</a ></p >
+    </div>
+</form>
+{% endblock %}

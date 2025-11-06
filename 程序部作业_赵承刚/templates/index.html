@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>欢迎, {{ user.username }}!</h1>
+<p>您已成功登录系统。</p >
+
+<div class="links">
+    <a href="/logout/" >退出登录</a>
+</div>
+{% endblock %}

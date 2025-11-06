@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>用户登录</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="id_username">用户名</label>
+        {{ form.username }}
+    </div>
+
+    <div class="form-group">
+        <label for="id_password">密码</label>
+        {{ form.password }}
+    </div>
+
+    <button type="submit" class="btn">登录</button>
+
+    <div class="links">
+        <p>没有账户？<a href="{% url 'register' %}">立即注册</a></p>>
+    </div>
+</form>
+{% endblock %}
